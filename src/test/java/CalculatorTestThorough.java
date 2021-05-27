@@ -12,10 +12,11 @@ public class CalculatorTestThorough {
         Calculator myCalculator = new Calculator();
 
         //bug here
-        for(int i = 1; i < 2000000000 ; i++){
+        for(int i = 0; i < 2000000000 ; i++){
             int firstNumber = 2000000000 - i;
             int secondNumber = i;
-            assertEquals(2000000000, myCalculator.add(firstNumber,secondNumber));
+            // assertEquals(2000000000, myCalculator.add(firstNumber,secondNumber));
+            assertEquals(20, myCalculator.add(firstNumber,secondNumber));
         }
 
     }
