@@ -11,7 +11,8 @@ public class CalculatorTestThorough {
     public void addTest(){
         Calculator myCalculator = new Calculator();
 
-        for(int i = 0; i < 2000000000 ; i++){
+        //bug here
+        for(int i = 1; i < 2000000000 ; i++){
             int firstNumber = 2000000000 - i;
             int secondNumber = i;
             assertEquals(2000000000, myCalculator.add(firstNumber,secondNumber));
