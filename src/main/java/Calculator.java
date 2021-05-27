@@ -1,3 +1,4 @@
+import java.util.Random;
 
 class Calculator {
 
@@ -39,7 +40,10 @@ class Calculator {
     etc
      */
     int fibonacciNumberFinder(int n){
-        return 0;
+
+        if (n <= 1)
+            return n;
+        return fibonacciNumberFinder(n - 1) + fibonacciNumberFinder(n-2);
     }
 
 
@@ -50,21 +54,25 @@ class Calculator {
     if int a = 10 then this method returns: 1010
     if int a = 16 then this method returns: 10000
      */
-    String intToBinaryNumber(int n){
-        return null;
-    }
+    String intToBinaryNumber(int n){ return Integer.toBinaryString(n); }
 
     /*
     Create a completely unique String identifier for a given string
     Each createdID must contain the string n in its unaltered Form
     if String n = "Jason"
     then the created ID could be = Jasonklfgn3jknnvksdfm - Because it contains the unaltered String n and is unique
-
     if you run this function twice with the same String input, it must return 2 unique String IDs
      */
     String createUniqueID(String n){
+        Random r = new Random();
 
-        return null;
+        String alphabet = "skf8sj04l4cnhbfhksJHF8";
+
+        StringBuilder uniqueId = new StringBuilder(n);
+        for (int i = 0; i < 10; i++) {
+            uniqueId.append(alphabet.charAt(r.nextInt(alphabet.length())));
+        }
+        return uniqueId.toString();
     }
 
 
